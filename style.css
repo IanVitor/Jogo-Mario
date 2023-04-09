@@ -1,0 +1,171 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: #2d2d2d;
+}
+
+#logo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+#frame{
+  height: 300px;
+  width: 300px;
+  margin: 50px auto 0;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  background-color: rgb(19, 175, 253);
+}
+
+#btn-container{
+  margin: 0 auto;
+  background-color: #2d2d2d;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+#btn-container button{
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: rgb(255, 0, 0);
+  color: #fff;
+  font-size: 16px;
+}
+#btn-container button:hover{
+  transform: scale(1.1);
+}
+
+p{
+  margin: 5px 10px;
+}
+
+#personagem{
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+
+#personagem img{
+  width: 100px;
+  position: absolute;
+  bottom: -25px;
+  left: -35px;
+}
+
+.pular{
+  animation: pular 1s ease-in-out ;
+}
+
+.andar{
+  animation: andar 1.5s linear infinite ;
+}
+
+.nuvens{
+  position: absolute;
+  top: 50px;
+  animation: nuvem 30s linear infinite;
+}
+
+.nuvens img{
+  width: 100px;
+}
+
+.nuvem-meio{
+  margin-right: 100px;
+  top: 30px;
+}
+
+.nuvem-fim{
+  margin-right: 200px;
+  top: 70px;
+}
+
+#chao{
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 110px;
+  animation: chao 3s linear infinite;
+}
+
+#chao img{
+  width: 160%;
+  position: absolute;
+  top: 0;
+  left: -60px;
+}
+
+#bloco{
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  bottom: 20px;
+  z-index: -1;
+}
+
+#bloco img{
+  width: 50px;
+  left: -10px;
+  position: absolute;
+}
+
+@keyframes andar {
+  from {
+    right: -50px;
+  }
+
+  to{
+    right: 100%;
+  }
+}
+
+@keyframes nuvem {
+  from {
+    right: -300px;
+  }
+
+  to{
+    right: 100%;
+  }
+}
+
+@keyframes chao {
+  from {
+    right: 0px;
+  }
+
+  to{
+    right: 50px;
+  }
+}
+
+@keyframes pular{
+  from{
+    bottom: 20px;
+  }
+
+  50%{
+    bottom: 100px;
+  }
+
+  to{
+    bottom: 20px;
+  }
+}
