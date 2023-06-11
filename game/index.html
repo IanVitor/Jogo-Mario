@@ -9,6 +9,19 @@
 </head>
 <body>
 
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <div class="menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="../ranking/ranking.html">Ranking</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
   <div id="logo"><img src="https://seeklogo.com/images/S/super-mario-logo-A8E04F3EC2-seeklogo.com.png"></div>
 
   <div id="frame">
@@ -18,7 +31,8 @@
     <div class="nuvens nuvem-meio"><img src="https://opengameart.org/sites/default/files/nuvem2d.png" ></div>
     <div class="nuvens nuvem-fim"><img src="https://opengameart.org/sites/default/files/nuvem2d.png" ></div>
 
-    <div id="personagem"><img src="https://i.pinimg.com/originals/b6/90/40/b69040ba12c1b3a9d9d998e3e67154e9.gif" alt=""></div>
+    <div id="personagem"><img src="https://gamerview.uai.com.br/wp-content/uploads/2019/12/mario-gif.gif" alt=""></div>
+
     <div class="andar" id="bloco"><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Mario_pipe.png" alt=""></div>
 
     <div id="chao"><img src="https://img.itch.zone/aW1nLzI1MjA5MTYucG5n/original/4octT5.png"></div>
@@ -26,8 +40,9 @@
 
   <div id="btn-container">
     <button onclick="recarregar()">Start</button>
-    <button onclick="pular()">A</button>
+    <button onclick="characterJump()">A</button>
   </div>
+
   
   <script src="script.js"></script>
 </body>

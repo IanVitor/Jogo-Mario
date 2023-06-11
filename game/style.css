@@ -6,13 +6,87 @@
 
 body{
   background-color: #2d2d2d;
+  height: 100%;
 }
+
+li{
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px 20px 0 0;
+  color: #fff;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 3px 8px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover{
+  border: 1px solid #fff;
+  color: rgb(181, 46, 46);
+}
+
+.menu {
+  gap: 1em;
+  font-size: 18px;
+  display:none;
+  position: absolute;
+  width: 300px;
+  height: 90vh;
+  right: 0;
+  left: auto;
+  text-align: center;
+  padding: 16px 0;
+  border: 1px solid #fff;
+  border-radius: 1px;
+  transition: 0.3s;
+}
+.menu li:hover {
+  border-radius: 5px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+.menu li {
+  padding: 5px 14px;
+}
+ /* MENU SUSPENSO */
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .menu{
+  display: block;
+  background-color: #474747;
+}
+.hamburger {
+  font-size: 24px;
+  user-select: none;
+  display: block;
+  cursor: pointer;
+}
+
+#wrapper
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 
 #logo{
   width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 #frame{
@@ -29,7 +103,7 @@ body{
   margin: 0 auto;
   background-color: #2d2d2d;
   width: 300px;
-  height: 200px;
+  padding: 20px;
   display: flex;
   align-items: center;
 }
@@ -45,6 +119,7 @@ body{
   background-color: rgb(255, 0, 0);
   color: #fff;
   font-size: 16px;
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.475);
 }
 #btn-container button:hover{
   transform: scale(1.1);
@@ -63,9 +138,9 @@ p{
 }
 
 #personagem img{
-  width: 100px;
+  width: 70px;
   position: absolute;
-  bottom: -25px;
+  bottom: 0px;
   left: -35px;
 }
 
