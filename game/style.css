@@ -7,6 +7,9 @@
 body{
   background-color: #2d2d2d;
   height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 li{
@@ -17,7 +20,7 @@ li{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 20px 20px 0 0;
+  padding: 10px 10px 0 0;
   color: #fff;
 }
 .nav-links a {
@@ -81,12 +84,15 @@ input[type=checkbox]:checked ~ .menu{
   flex-wrap: wrap;
 }
 
-
 #logo{
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+}
+
+#logo img{
+  width: 200px;
 }
 
 #frame{
@@ -96,14 +102,15 @@ input[type=checkbox]:checked ~ .menu{
   position: relative;
   overflow: hidden;
   z-index: -1;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.368);
   background-color: rgb(19, 175, 253);
 }
 
 #btn-container{
   margin: 0 auto;
-  background-color: #2d2d2d;
   width: 300px;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
 }
@@ -127,6 +134,7 @@ input[type=checkbox]:checked ~ .menu{
 
 p{
   margin: 5px 10px;
+  font-weight: 600;
 }
 
 #personagem{

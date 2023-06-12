@@ -81,3 +81,27 @@ input[type=checkbox]:checked ~ .menu{
   flex-direction: column;
   flex-wrap: wrap;
 }
+
+#tabela{
+  margin: auto;
+  border-collapse: collapse;
+  color: #fdfdfd;
+  background-color: #474747;
+  border-radius: 10px;
+  width: 80%;
+}
+
+#tabela td{
+  border-top: 1px solid #FFF;
+  padding: 5px;
+  text-align: center;
+}
+
+#tabela_titulo{
+  border-radius: 10px;
+}
+
+#tabela_titulo td{
+  background-color: rgb(226, 39, 39);
+  border: none;
+}

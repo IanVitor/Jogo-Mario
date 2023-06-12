@@ -1,18 +1,21 @@
 const table = document.querySelector("#tabela")
 
-function getStorageData(){
-  if (localStorage.ranking){
-    points = JSON.parse(localStorage.getItem('ranking'));
+function getPontuacao (){
+  if(localStorage.points){
+    pointsArray = JSON.parse(localStorage.getItem('points'));
   };
 
-  console.log(points)
-
-  return points;
+  return pointsArray
 }
 
-const pontos = getStorageData()
+const pontos = getPontuacao()
 
-for(let i =1;i<pontos.length;i++){
-  console.log(pontos[i])
-  tabela.innerHTML += `<td>${pontos[i][0]}</td>`
+for(let i = 0;i<pontos.length;i++){
+  tabela.innerHTML += 
+  `
+  <tr>
+    <td>${pontos[i][0]}</td>
+    <td>${pontos[i][1]}</td>
+  </tr>
+  `
 }

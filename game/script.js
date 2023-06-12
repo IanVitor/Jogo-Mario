@@ -2,9 +2,10 @@ const character = document.querySelector("#personagem")
 const characterImg = document.querySelector("#personagem img")
 const enemy = document.querySelector("#bloco")
 const pontos = document.querySelector("#pontos span")
+const btn_jump = document.querySelector("#btn_jump")
 var scoreIndex = 1
 var characterColision = false
-var points = [];
+var pointsArray = []
 
 const characterJump = () => {
   character.classList.add("pular")
@@ -33,6 +34,7 @@ setInterval(() => {
 setInterval(() => {
   if(characterColision === false){
     pontos.innerHTML = scoreIndex++
+  } else{
   }
     
 }, 1500)
@@ -43,6 +45,16 @@ function recarregar (){
 
 document.body.addEventListener('keydown', () => {
   if(characterColision === true){
+    salvarPontuacao(scoreIndex-1)
+    recarregar()
+  }else {
+    characterJump()
+  }
+})
+
+btn_jump.addEventListener('click', () => {
+  if(characterColision === true){
+    salvarPontuacao(scoreIndex-1)
     recarregar()
   }else {
     characterJump()
@@ -51,41 +63,47 @@ document.body.addEventListener('keydown', () => {
 
 // LocalStorage
 
-function createTaskInLocalStorage(pontuation){
+function salvarPontuacao (pointsNumber){
 
-  points = getStorageData()
-
-  let ranking = []
-  let date = new Date();
-
-  ranking[0] = pontuation
-  ranking[1] = date.toLocaleDateString();
-  if(points.length <=5){
-    points.push(ranking);
-    localStorage.ranking = JSON.stringify(points);
-  }else return
+  pointsArray = getPontuacao()
   
+  
+  let dateNow = new Date()
+  let date = `${dateNow.getDate()}/${dateNow.getMonth()+1}`
+  let points = [date, pointsNumber]
+  
+  pointsArray.push(points)
+
+  if(pointsArray.length < 6){
+    localStorage.points = JSON.stringify(pointsArray)
+  } else {
+    let newArray = ordenar(pointsArray)
+    newArray.pop()
+    localStorage.points = JSON.stringify(newArray)
+  }
+
 }
 
-function getStorageData(){
-  if (localStorage.ranking){
-    points = JSON.parse(localStorage.getItem('ranking'));
+function getPontuacao (){
+  if(localStorage.points){
+    pointsArray = JSON.parse(localStorage.getItem('points'));
   };
 
-  console.log(points)
-
-  return points;
+  return pointsArray
 }
 
-function clear() {
-  points = []
+function ordenar (array){
+  let aux1 = []
+  
+  for(let i = 0;i<array.length;i++){  
+    for(let j=0;j<array.length;j++){
+      if(array[j][1] < array[i][1]){
+        aux1 = array[j];
+        array[j] = array[i];
+        array[i] = aux1;
+      }
+    }
+  }
 
-  let ranking = []
-
-  points.push(ranking);
-  localStorage.ranking = JSON.stringify(points);
+  return array;
 }
-
-//createTaskInLocalStorage(44)
-getStorageData()
-clear()
